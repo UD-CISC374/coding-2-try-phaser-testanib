@@ -11,7 +11,7 @@ export default class MainScene extends Phaser.Scene {
   ship4: Phaser.GameObjects.Image;
   ship5: Phaser.GameObjects.Image;
   bart: Phaser.GameObjects.Image;
-  ada: Phaser.GameObjects.Sprite;
+  ada: Phaser.Physics.Arcade.Sprite;
   cursorKeys;
   spacebar;
 
@@ -30,7 +30,7 @@ export default class MainScene extends Phaser.Scene {
     this.ship4 = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
     this.ship5 = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
     this.bart = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
-   //this.ada = this.add.sprite(10, this.width/2, 'ada');
+    //this.ada = this.physics.add.sprite(10, this.width/2, 'ada');
     this.background.setOrigin(0,0);
     this.ship1.setScale(.5);
     this.ship2.setScale(1);
