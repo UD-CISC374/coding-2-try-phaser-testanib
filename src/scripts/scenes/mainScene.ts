@@ -11,7 +11,9 @@ export default class MainScene extends Phaser.Scene {
   ship4: Phaser.GameObjects.Image;
   ship5: Phaser.GameObjects.Image;
   bart: Phaser.GameObjects.Image;
-  ada: Phaser.GameObjects.Image;
+  ada: Phaser.GameObjects.Sprite;
+  cursorKeys;
+  spacebar;
 
   constructor() {
     super({ key: 'MainScene' });
@@ -28,6 +30,7 @@ export default class MainScene extends Phaser.Scene {
     this.ship4 = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
     this.ship5 = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
     this.bart = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
+   //this.ada = this.add.sprite(10, this.width/2, 'ada');
     this.background.setOrigin(0,0);
     this.ship1.setScale(.5);
     this.ship2.setScale(1);
@@ -36,7 +39,9 @@ export default class MainScene extends Phaser.Scene {
     this.ship5.setScale(.6);
     this.bart.setScale(1);
     this.ada = this.physics.add.sprite(this.width / 2 -8, this.height - 64, "ada");
-    //this.ada.
+    this.ada.play("thrust");
+    this.cursorKeys = this.input.keyboard.createCursorKeys();
+    this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
   }
 
   moveShip(ship, speed){
@@ -52,6 +57,13 @@ export default class MainScene extends Phaser.Scene {
     ship.x = randomX;
   }
 
+  movePlayerManager(){
+    if(this.cursorKeys.left.isDown)
+      this.ada.x = -2;
+    if(this.cursorKeys.right.isDown)
+      this.ada.x = 2;
+  }
+
   update() {
     this.moveShip(this.ship1, 2);
     this.moveShip(this.ship2, 2);
@@ -59,5 +71,8 @@ export default class MainScene extends Phaser.Scene {
     this.moveShip(this.ship4, 2);
     this.moveShip(this.ship5, 3);
     this.moveShip(this.bart, 2);
+    this.movePlayerManager();
+    if(Phaser.Input.Keyboard.JustDown(this.spacebar))
+      console.log("Fire!");
   } 
 }
