@@ -48,15 +48,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coding-2-try-phaser-testanib/devassets/spritesheets/ship3.png"
   },
   {
-    "revision": "08b89879b736c7554b9c",
-    "url": "/coding-2-try-phaser-testanib/devgen.main.f80253f240e6b48bb27b.bundle.js"
+    "revision": "91e450b1c1113eb17691",
+    "url": "/coding-2-try-phaser-testanib/devgen.main.3d2832e4d65a9c95f9be.bundle.js"
   },
   {
     "revision": "201b65bee9df6270f739",
     "url": "/coding-2-try-phaser-testanib/devgen.vendors.a047ee0740c7d21714d9.bundle.js"
   },
   {
-    "revision": "cadb7de51a204f5a3d8edc4e1a6210e2",
+    "revision": "abc3dad35ef9d3f6455d35a753155ca8",
     "url": "/coding-2-try-phaser-testanib/devindex.html"
   },
   {
