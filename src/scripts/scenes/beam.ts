@@ -3,6 +3,6 @@ export default class Beam extends Phaser.Physics.Arcade.Sprite{
         let x = scene.ada.x;
         let y = scene.ada.y;
         super(scene, x, y, "beam");
-        scene.projectiles.add(this);
+        scene.add.existing(this);
     }
 }
