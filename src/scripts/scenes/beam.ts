@@ -12,4 +12,8 @@ export default class Beam extends Phaser.Physics.Arcade.Sprite{
         //scene.projectiles.set('body.allowGravity', false);
         //this.body.allowGravity(false);
     }
+    update(){
+        if(this.y < 20)
+            this.destroy();
+    }
 }
