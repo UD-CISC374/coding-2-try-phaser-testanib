@@ -61,7 +61,7 @@ export default class MainScene extends Phaser.Scene {
     this.ship4.setScale(.5);
     this.ship5.setScale(.63);
     this.bart.setScale(.6);
-    this.ada.setScale(.5);
+    this.ada.setScale(.65);
     //this.ada = this.physics.add.sprite(this.width / 2 -8, this.height - 64, "ada");
     //this.ada.play("thrust");
     this.cursorKeys = this.input.keyboard.createCursorKeys();
@@ -75,14 +75,21 @@ export default class MainScene extends Phaser.Scene {
     for(let i = 0; i < this.ships.getChildren().length; i++){
       this.physics.add.existing(this.ships.getChildren()[i]);
     }
-    this.physics.add.collider(this.projectiles, this.ships, function(projectile, ship){
-      projectile.destroy();
+    this.physics.add.collider(this.projectiles, this.ships, this.hitShip, function(projectile, ship){
+      projectile.destroy();  
+      ship.destroy();
     });
+    this.physics.add.overlap(this.projectiles, this.ships, this.hitShip);
+  }
+
+  hitShip(projectile, ship){
+    projectile.destroy();
+    //this.resetShipPos(ship);
   }
 
   moveShip(ship, speed){
     ship.y+= speed;
-    if(ship.y > 600){
+    if(ship.y > 600 || ship.y < -100){
       this.resetShipPos(ship);
     }
   }
@@ -111,12 +118,15 @@ export default class MainScene extends Phaser.Scene {
   }
 
   update() {
-    this.moveShip(this.ship1, 2);
-    this.moveShip(this.ship2, 2);
-    this.moveShip(this.ship3, 3);
-    this.moveShip(this.ship4, 2);
-    this.moveShip(this.ship5, 3);
-    this.moveShip(this.bart, 2);
+    // this.moveShip(this.ship1, 2);
+    // this.moveShip(this.ship2, 2);
+    // this.moveShip(this.ship3, 3);
+    // this.moveShip(this.ship4, 2);
+    // this.moveShip(this.ship5, 3);
+    // this.moveShip(this.bart, 2);
+    for(let i = 0; i < this.ships.getChildren().length; i++){
+      this.moveShip(this.ships.getChildren()[i], 2.5);
+    }
     this.movePlayerManager();
     if(Phaser.Input.Keyboard.JustDown(this.spacebar)){
       console.log("Fire!");
@@ -125,6 +135,14 @@ export default class MainScene extends Phaser.Scene {
     for(let i = 0; i < this.projectiles.getChildren().length; i++){
       let beam = this.projectiles.getChildren()[i];
       beam.update();
+    }
+    if(this.ships.getChildren().length<6){
+      let newShip = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
+      newShip.setScale(.92);
+      this.ships.add(newShip);
+      this.physics.add.existing(newShip);
+      this.resetShipPos(newShip);
+      this.moveShip(newShip,3);
     }
   }
 } 
