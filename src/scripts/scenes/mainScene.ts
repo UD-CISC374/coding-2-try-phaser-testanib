@@ -1,4 +1,6 @@
 import ExampleObject from '../objects/exampleObject';
+import Beam from './beam';
+import { Scene } from 'phaser';
 
 export default class MainScene extends Phaser.Scene {
   private exampleObject: ExampleObject;
@@ -12,8 +14,11 @@ export default class MainScene extends Phaser.Scene {
   ship5: Phaser.GameObjects.Image;
   bart: Phaser.GameObjects.Image;
   ada: Phaser.GameObjects.Image;
+  //beam: Phaser.GameObjects.Sprite;
   cursorKeys;
   spacebar;
+  beam: Phaser.GameObjects.Sprite;
+  projectiles;
 
   constructor() {
     super({ key: 'MainScene' });
@@ -30,7 +35,11 @@ export default class MainScene extends Phaser.Scene {
     this.ship4 = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
     this.ship5 = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
     this.bart = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
-    this.ada = this.add.image(300, 300, "ada");
+    this.ada = this.add.image(300, 375, "ada");
+    this.projectiles = this.physics.add.group();
+    //this.projectiles = this.scene.add
+    //this.beam = new Beam(this);
+    //this.beam = this.add.sprite()
     this.background.setOrigin(0,0);
     this.ship1.setScale(.5);
     this.ship2.setScale(.7);
@@ -60,9 +69,16 @@ export default class MainScene extends Phaser.Scene {
 
   movePlayerManager(){
     if(this.cursorKeys.left.isDown)
-      this.ada.x += -2;
+      this.ada.x += -4;
     if(this.cursorKeys.right.isDown)
-      this.ada.x += 2;
+      this.ada.x += 4;
+  }
+
+  shootBeam(){
+    //let beam = this.physics.add.sprite(this.ada.x, this.ada.y, "beam");
+    let beam = new Beam(this);
+    this.projectiles.add(beam);
+    //this.beam = this.add.sprite(this.ada.x, this.ada.y, "beam");
   }
 
   update() {
@@ -73,7 +89,9 @@ export default class MainScene extends Phaser.Scene {
     this.moveShip(this.ship5, 3);
     this.moveShip(this.bart, 2);
     this.movePlayerManager();
-    if(Phaser.Input.Keyboard.JustDown(this.spacebar))
+    if(Phaser.Input.Keyboard.JustDown(this.spacebar)){
       console.log("Fire!");
+      this.shootBeam();
+    }
   } 
 }
