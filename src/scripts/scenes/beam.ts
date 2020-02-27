@@ -8,5 +8,8 @@ export default class Beam extends Phaser.Physics.Arcade.Sprite{
         this.play("beam_anim");
         scene.physics.world.enableBody(this);
         this.body.velocity.y = -250;
+        this.setGravity(0);
+        //scene.projectiles.set('body.allowGravity', false);
+        //this.body.allowGravity(false);
     }
 }

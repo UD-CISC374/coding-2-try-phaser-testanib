@@ -36,17 +36,20 @@ export default class MainScene extends Phaser.Scene {
     this.ship5 = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
     this.bart = this.add.image(0,Phaser.Math.Between(0, this.width),"bart");
     this.ada = this.add.image(300, 375, "ada");
-    this.projectiles = this.physics.add.group();
+    this.projectiles = this.physics.add.group({
+      immovable: false,
+      allowGravity: false
+    });
     //this.projectiles = this.scene.add
     //this.beam = new Beam(this);
     //this.beam = this.add.sprite()
     this.background.setOrigin(0,0);
     this.ship1.setScale(.5);
-    this.ship2.setScale(.7);
-    this.ship3.setScale(.75);
+    this.ship2.setScale(.6);
+    this.ship3.setScale(.62);
     this.ship4.setScale(.5);
-    this.ship5.setScale(.6);
-    this.bart.setScale(.7);
+    this.ship5.setScale(.63);
+    this.bart.setScale(.6);
     this.ada.setScale(.5);
     //this.ada = this.physics.add.sprite(this.width / 2 -8, this.height - 64, "ada");
     //this.ada.play("thrust");
@@ -77,7 +80,9 @@ export default class MainScene extends Phaser.Scene {
   shootBeam(){
     //let beam = this.physics.add.sprite(this.ada.x, this.ada.y, "beam");
     let beam = new Beam(this);
+    //beam.body.allowGravity = false;
     //this.projectiles.add(beam);
+    //this.projectiles.set('body.allowGravity', false);
     //this.beam = this.add.sprite(this.ada.x, this.ada.y, "beam");
 
   }
