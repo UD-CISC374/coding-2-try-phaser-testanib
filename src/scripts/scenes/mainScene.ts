@@ -75,10 +75,11 @@ export default class MainScene extends Phaser.Scene {
   }
 
   shootBeam(){
-    //let beam = this.physics.add.sprite(this.ada.x, this.ada.y, "beam");
-    let beam = new Beam(this);
-    this.projectiles.add(beam);
+    let beam = this.physics.add.sprite(this.ada.x, this.ada.y, "beam");
+    //let beam = new Beam(this);
+    //this.projectiles.add(beam);
     //this.beam = this.add.sprite(this.ada.x, this.ada.y, "beam");
+
   }
 
   update() {
