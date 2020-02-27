@@ -11,8 +11,8 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image("bart", "assets/bart.png");
     this.load.image("ada", "assets/spritesheets/ada.png");
     this.load.spritesheet("beam", "assets/spritesheets/beam.png", {
-      frameWidth: 5,
-      frameHeight: 5
+      frameWidth: 16,
+      frameHeight: 16
     });
   }
 

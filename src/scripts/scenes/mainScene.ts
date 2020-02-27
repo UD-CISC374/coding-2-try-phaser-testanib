@@ -68,9 +68,9 @@ export default class MainScene extends Phaser.Scene {
   }
 
   movePlayerManager(){
-    if(this.cursorKeys.left.isDown)
+    if(this.cursorKeys.left.isDown && this.ada.x>10)
       this.ada.x += -4;
-    if(this.cursorKeys.right.isDown)
+    if(this.cursorKeys.right.isDown && this.ada.x<590)
       this.ada.x += 4;
   }
 
