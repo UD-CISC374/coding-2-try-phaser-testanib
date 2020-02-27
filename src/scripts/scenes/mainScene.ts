@@ -19,6 +19,7 @@ export default class MainScene extends Phaser.Scene {
   spacebar;
   beam: Phaser.GameObjects.Sprite;
   projectiles;
+  ships: Phaser.GameObjects.Group;
 
   constructor() {
     super({ key: 'MainScene' });
@@ -40,6 +41,16 @@ export default class MainScene extends Phaser.Scene {
       immovable: false,
       allowGravity: false
     });
+    this.ships = this.physics.add.group({
+      immovable: false,
+      allowGravity: false
+    });
+    this.ships.add(this.ship1);
+    this.ships.add(this.ship2);
+    this.ships.add(this.ship3);
+    this.ships.add(this.ship4);
+    this.ships.add(this.ship5);
+    this.ships.add(this.bart);
     //this.projectiles = this.scene.add
     //this.beam = new Beam(this);
     //this.beam = this.add.sprite()
@@ -55,6 +66,18 @@ export default class MainScene extends Phaser.Scene {
     //this.ada.play("thrust");
     this.cursorKeys = this.input.keyboard.createCursorKeys();
     this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+    this.ship1.setInteractive();
+    this.ship2.setInteractive();
+    this.ship3.setInteractive();
+    this.ship4.setInteractive();
+    this.ship5.setInteractive();
+    this.bart.setInteractive();
+    for(let i = 0; i < this.ships.getChildren().length; i++){
+      this.physics.add.existing(this.ships.getChildren()[i]);
+    }
+    this.physics.add.collider(this.projectiles, this.ships, function(projectile, ship){
+      projectile.destroy();
+    });
   }
 
   moveShip(ship, speed){
