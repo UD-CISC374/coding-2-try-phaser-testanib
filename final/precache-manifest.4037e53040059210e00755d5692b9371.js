@@ -60,19 +60,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coding-2-try-phaser-testanib/finalassets/spritesheets/ship3.png"
   },
   {
-    "revision": "527bc2d281a7007bfa5a",
-    "url": "/coding-2-try-phaser-testanib/finalgen.main.d77cf2712d5185ca38a1.bundle.js"
+    "revision": "da8a408d1a0feab6690cf55892724b33",
+    "url": "/coding-2-try-phaser-testanib/finalfavicon.ico"
+  },
+  {
+    "revision": "29a1d9b8323df6a33606",
+    "url": "/coding-2-try-phaser-testanib/finalgen.main.7ea8cafe9c438c6e4850.bundle.js"
   },
   {
     "revision": "201b65bee9df6270f739",
     "url": "/coding-2-try-phaser-testanib/finalgen.vendors.a047ee0740c7d21714d9.bundle.js"
   },
   {
-    "revision": "85d300f164e19cac941a333ba653b51e",
+    "revision": "ab4cdcda3cec20fcf228800f3c9c917c",
+    "url": "/coding-2-try-phaser-testanib/finalicons/icons-192.png"
+  },
+  {
+    "revision": "14d5536e969de014f892b16db4ff559f",
+    "url": "/coding-2-try-phaser-testanib/finalicons/icons-512.png"
+  },
+  {
+    "revision": "a99c380b1edf11d65bf2f2faf7e642f2",
     "url": "/coding-2-try-phaser-testanib/finalindex.html"
   },
   {
-    "revision": "b4321e6f6a88a978d4964c0d1b432b03",
+    "revision": "a1fb38615cd7e14ccc5d58486f767962",
     "url": "/coding-2-try-phaser-testanib/finalmanifest.json"
   },
   {
