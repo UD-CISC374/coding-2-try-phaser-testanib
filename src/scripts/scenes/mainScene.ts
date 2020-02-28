@@ -20,6 +20,9 @@ export default class MainScene extends Phaser.Scene {
   beam: Phaser.GameObjects.Sprite;
   projectiles;
   ships: Phaser.GameObjects.Group;
+  scoreLabel;
+  score: number;
+  scoreNumLabel;
 
   constructor() {
     super({ key: 'MainScene' });
@@ -78,15 +81,26 @@ export default class MainScene extends Phaser.Scene {
     this.physics.add.collider(this.projectiles, this.ships, this.hitShip, function(projectile, ship){
       projectile.destroy();  
       ship.destroy();
+      
     });
     this.physics.add.overlap(this.projectiles, this.ships, this.hitShip);
+    this.score = 0;
+    console.log(this.score);
+    this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE", 16);
+    this.scoreNumLabel = this.add.bitmapText(50, 5, "pixelFont", this.score.toString(), 16);
   }
 
   hitShip(projectile, ship){
     projectile.destroy();
     //this.resetShipPos(ship);
+    let temp = this.score;
+    console.log(temp);
+    this.score += 10;
+    this.scoreLabel.bitmapText = "SCORE " + this.score;
+    this.scoreNumLabel = this.score;
+    console.log(this.score + "a");
   }
-
+  
   moveShip(ship, speed){
     ship.y+= speed;
     if(ship.y > 600 || ship.y < -100){
@@ -144,6 +158,8 @@ export default class MainScene extends Phaser.Scene {
       this.resetShipPos(newShip);
       this.moveShip(newShip,3);
     }
+    //this.scoreLabel = "SCORE " + this.score;
+    //this.scoreNumLabel = this.add.bitmapText(50, 5, "pixelFont", this.score.toString(), 16);
   }
 } 
 

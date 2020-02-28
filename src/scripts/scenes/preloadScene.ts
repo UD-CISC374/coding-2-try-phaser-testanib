@@ -1,4 +1,5 @@
 export default class PreloadScene extends Phaser.Scene {
+  //scoreLabel;
   constructor() {
     super({ key: 'PreloadScene' });
   }
@@ -14,6 +15,7 @@ export default class PreloadScene extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16
     });
+    this.load.bitmapFont("pixelFont", "assets/font/font.png", "assets/font/font.xml");
   }
 
   create() {
@@ -36,6 +38,7 @@ export default class PreloadScene extends Phaser.Scene {
       frameRate: 20,
       repeat: -1
     });
+    //this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE", 16);
     this.scene.start('MainScene');
   }
 }
