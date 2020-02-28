@@ -22,7 +22,7 @@ export default class MainScene extends Phaser.Scene {
   ships: Phaser.GameObjects.Group;
   scoreLabel;
   score: number;
-  scoreNumLabel;
+  scoreNumLabel: Phaser.GameObjects.BitmapText;
 
   constructor() {
     super({ key: 'MainScene' });
@@ -98,7 +98,7 @@ export default class MainScene extends Phaser.Scene {
     this.score += 10;
     //this.scoreLabel.bitmapText = "SCORE " + this.score;
     //this.scoreNumLabel.setText(this.score);
-    this.scoreNumLabel = this.score;
+    this.scoreNumLabel.text = this.score.toString();
     console.log(this.score + "a");
   }
   
@@ -160,7 +160,7 @@ export default class MainScene extends Phaser.Scene {
       this.moveShip(newShip,3);
     }
     //this.scoreLabel = "SCORE " + this.score;
-    this.scoreNumLabel = this.score;
+    //this.scoreNumLabel = this.score;
   }
 } 
 
