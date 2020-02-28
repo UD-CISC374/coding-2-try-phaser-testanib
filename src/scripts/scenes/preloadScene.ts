@@ -16,8 +16,11 @@ export default class PreloadScene extends Phaser.Scene {
       frameHeight: 16
     });
     this.load.bitmapFont("pixelFont", "assets/font/font.png", "assets/font/font.xml");
+    this.load.spritesheet("explosion", "assets/spritesheets/explosion.png", {
+      frameWidth: 20,
+      frameHeight: 20
+    });
   }
-
   create() {
     //this.add.text(20,20,"Loading...");
     // this.anims.create({
@@ -37,6 +40,15 @@ export default class PreloadScene extends Phaser.Scene {
       }),
       frameRate: 20,
       repeat: -1
+    });
+    this.anims.create({
+      key: "explosion_anim",
+      frames: this.anims.generateFrameNumbers("explosion" , { 
+        start: 0, 
+        end: 4 }),
+      frameRate: 20,
+      repeat: 0,
+      hideOnComplete: true
     });
     //this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE", 16);
     this.scene.start('MainScene');

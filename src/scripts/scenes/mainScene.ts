@@ -1,6 +1,7 @@
 import ExampleObject from '../objects/exampleObject';
 import Beam from './beam';
 import { Scene } from 'phaser';
+import Explosion from "../objects/explosion";
 
 export default class MainScene extends Phaser.Scene {
   private exampleObject: ExampleObject;
@@ -100,6 +101,7 @@ export default class MainScene extends Phaser.Scene {
     //this.scoreNumLabel.setText(this.score);
     this.scoreNumLabel.text = this.score.toString();
     console.log(this.score + "a");
+    //let explosion = new Explosion(this, ship.x, ship.y);
   }
   
   moveShip(ship, speed){
