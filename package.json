@@ -1,8 +1,8 @@
 {
   "name": "coding-2-try-phaser-testanib",
   "version": "0.0.1",
-  "description": "Phaser 3 starter template for educational games, using TypeScript, webpack, and Github Pages.",
-  "homepage": "https://github.com/acbart/educational-phaser-game-template#readme",
+  "description": "As Ada you have to pop as many Bart Ballons as you can.",
+  "homepage": "https://github.com/UD-CISC374/coding-2-try-phaser-testanib",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js",
@@ -23,15 +23,19 @@
     "TypeScript",
     "webpack",
     "Github Pages",
-    "starter"
+    "starter",
+    "shooter",
+    "pop balloons",
+    "Corgie",
+    "Dr. Bart"
   ],
   "author": {
-    "name": "Austin Cory Bart",
-    "url": "https://github.com/acbart"
+    "name": "Benjamin Testani",
+    "url": "https://github.com/testanib"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/acbart/educational-phaser-game-template.git"
+    "url": "https://github.com/UD-CISC374/coding-2-try-phaser-testanib.git"
   },
   "template": {
     "name": "educational-phaser-game-template",
