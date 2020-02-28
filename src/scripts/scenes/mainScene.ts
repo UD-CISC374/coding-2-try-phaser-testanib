@@ -97,6 +97,7 @@ export default class MainScene extends Phaser.Scene {
     //console.log(temp);
     this.score += 10;
     //this.scoreLabel.bitmapText = "SCORE " + this.score;
+    //this.scoreNumLabel.setText(this.score);
     this.scoreNumLabel = this.score;
     console.log(this.score + "a");
   }
