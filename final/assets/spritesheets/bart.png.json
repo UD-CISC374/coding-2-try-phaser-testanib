@@ -1,0 +1,41 @@
+{
+	"textures": [
+		{
+			"image": "bart.png.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 56,
+				"h": 76
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "bart.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 76
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 76
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 76
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:641651fd075466d77b5abc7cb05aa0ec:3f7c8e8cc25ba932c2cbbd8b761f007f:803dd1ea0cf320b40e4a51c3c245eb68$"
+	}
+}
