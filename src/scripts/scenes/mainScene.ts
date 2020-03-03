@@ -34,7 +34,7 @@ export default class MainScene extends Phaser.Scene {
 
   create() {
     this.phase = "playing";
-    this.bartsLost = 15;
+    this.bartsLost = 5;
     this.exampleObject = new ExampleObject(this, 0, 0);
     this.background=this.add.image(0,0,"background");
     this.width = 600;
@@ -169,10 +169,18 @@ export default class MainScene extends Phaser.Scene {
 
   playEnding(): void { 
     this.ships.clear(true, true);
-    this.add.text(this.height/2, this.width/2, "GAME OVER", {
-      font: "60px Arial",
+    this.add.text(this.height/2 -75, this.width/2 -200, "GAME OVER", {
+      font: "50px Arial",
       bold: true,
-      fill:"darkblue"});
+      fill:"white"});
+      this.add.text(this.height/2 -130, this.width/2 -150, "FINAL SCORE:", {
+        font: "50px Arial",
+        bold: true,
+        fill:"white"});
+        this.add.text(this.height/2 +225, this.width/2 -150, this.score.toString(), {
+          font: "50px Arial",
+          bold: true,
+          fill:"white"});
     this.ada.disableInteractive; 
   }
 
