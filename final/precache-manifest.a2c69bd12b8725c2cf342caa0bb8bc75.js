@@ -72,8 +72,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coding-2-try-phaser-testanib/finalfavicon.ico"
   },
   {
-    "revision": "356d1a480158673dd330",
-    "url": "/coding-2-try-phaser-testanib/finalgen.main.61fd5afa23f010cc3a5e.bundle.js"
+    "revision": "0f44e2f37b7ce7acfd37",
+    "url": "/coding-2-try-phaser-testanib/finalgen.main.65645bd3793d40b5a20d.bundle.js"
   },
   {
     "revision": "201b65bee9df6270f739",
@@ -88,7 +88,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coding-2-try-phaser-testanib/finalicons/icons-512.png"
   },
   {
-    "revision": "5f5ff6b7d236c8580f901f8f122be126",
+    "revision": "6588a9a39c9c8b89db00b0d2ea3c8b6f",
     "url": "/coding-2-try-phaser-testanib/finalindex.html"
   },
   {
