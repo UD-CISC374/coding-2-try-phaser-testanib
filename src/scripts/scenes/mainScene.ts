@@ -34,7 +34,7 @@ export default class MainScene extends Phaser.Scene {
 
   create() {
     this.phase = "playing";
-    this.bartsLost = 100;
+    this.bartsLost = 50;
     this.exampleObject = new ExampleObject(this, 0, 0);
     this.background=this.add.image(0,0,"background");
     this.width = 600;
