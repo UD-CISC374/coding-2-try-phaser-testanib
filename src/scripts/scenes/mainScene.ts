@@ -34,7 +34,7 @@ export default class MainScene extends Phaser.Scene {
 
   create() {
     this.phase = "playing";
-    this.bartsLost = 5;
+    this.bartsLost = 100;
     this.exampleObject = new ExampleObject(this, 0, 0);
     this.background=this.add.image(0,0,"background");
     this.width = 600;
@@ -116,8 +116,7 @@ export default class MainScene extends Phaser.Scene {
     projectile.destroy();
     this.score += 10;
     this.scoreNumLabel.text = this.score.toString();
-    console.log(this.score + "a");
-    }
+  }
   
   moveShip(ship, speed){
     ship.y+= speed;
